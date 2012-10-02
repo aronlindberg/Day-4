@@ -13,4 +13,11 @@ bf.shortlab <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 biofam.seq <- seqdef(biofam[,10:25], states=bf.shortlab, labels=bf.states, weights=biofam$wp00tbgs)
 
 # Computing longitudinal characteristics
+bf.lgth <- seqlength(biofam.seq)
+bf.tran <- seqtransn(biofam.seq)
+bf.sseq <- seqsubsn(biofam.seq)
+bf.entr <- seqient(biofam.seq)
+bf.turb <- seqST(biofam.seq)
+bf.ici <- seqici(biofam.seq)
 
+# Merge all the characteristics into a single table
