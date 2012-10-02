@@ -21,3 +21,14 @@ bf.turb <- seqST(biofam.seq)
 bf.ici <- seqici(biofam.seq)
 
 # Merge all the characteristics into a single table
+bf.long <- data.frame(bf.lgth, bf.tran, bf.sseq, bf.entr, bf.turb, bf.ici)
+
+# Renaming the columns
+names(bf.long) <- c("lgth", "tran", "sseq", "entr", "turb", "ici")
+
+# Create a histogram
+par(mfrow = c(2, 3))
+col=c("red", "green3", "blue", "cyan", "magenta", "yellow", "grey")
+for (i in 2:ncol(bf.long)){
+  hist(bf.long[,i], col=col[i], main=names(bf.long)[i], xlab="")
+}
